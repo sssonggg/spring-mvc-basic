@@ -23,13 +23,15 @@
 
 
     <style>
-        *{
+        * {
             text-align: center;
         }
 
         h1 {
+            font-weight: bold;
             font-family: '휴먼편지체';
             color: hotpink;
+            font-size: 30px;
         }
 
         span {
@@ -41,18 +43,18 @@
             list-style: none;
             margin: 0;
             padding: 0;
-            font-size: 1.4em;
+            font-size: 20px;
         }
 
         section.score-main {
-            margin: 0 auto 150px;
+            margin: 0 auto;
+            margin-top: 150px;
             padding: 20px;
             border-radius: 10px;
             width: 40%;
             height: 30%;
             border: 3px dashed #4271f0;
             box-shadow: 1px 1px 3px 5px rgb(92, 146, 207);
-            transform: translateY(200px);
         }
 
         button {
@@ -75,7 +77,7 @@
 
     <div class="wrap">
         <section class="score-main">
-            <h1>🎶<span>${stuNum.name} 님</span> 성적 정보 수정하기</h1>
+            <h1>🎶<span>${stuNum.name}님</span> 성적 정보 수정하기</h1>
             <form action="/score/modify" method="post">
                 <input type="hidden" name="stuNum" value="${stuNum.stuNum}">
                 <ul>
@@ -85,7 +87,9 @@
                 </ul>
                 <div class="btn-group">
                     <button type="submit">수정완료</button>
+                    <button type="button" onclick="history.back()">이전으로</button>
                 </div>
+           </div>
             </form>
         </section>
 

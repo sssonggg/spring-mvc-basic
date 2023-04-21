@@ -1,7 +1,7 @@
 package com.spring.mvc.chap04.repository;
 
 import com.spring.mvc.chap04.entity.Score;
-import com.spring.mvc.chap04.entity.ScoreRequestDTO;
+import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 
 import java.util.List;
 

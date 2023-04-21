@@ -1,5 +1,6 @@
 package com.spring.mvc.chap04.entity;
 
+import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 import lombok.*;
 
 import static java.lang.Math.round;

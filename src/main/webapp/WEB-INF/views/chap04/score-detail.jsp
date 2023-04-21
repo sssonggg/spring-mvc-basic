@@ -59,14 +59,14 @@
 
 <body>
     <div>
-        <h1><span>🥇${detailNum.name} </span>님의 성적정보</h1>
+        <h1><span>🥇${s.name} </span>님의 성적정보</h1>
         <ul class="student-inform">
-            <li> # 국어 : ${detailNum.kor} 점</li>
-            <li> # 영어 : ${detailNum.eng} 점</li>
-            <li> # 수학 : ${detailNum.math} 점</li>
-            <li> # 총점 : ${detailNum.total} 점</li>
-            <li> # 평균 : ${detailNum.average} 점</li>
-            <li> # 학점 :🔫 ${detailNum.grade} 🔫</li>
+            <li> # 국어 : ${s.kor} 점</li>
+            <li> # 영어 : ${s.eng} 점</li>
+            <li> # 수학 : ${s.math} 점</li>
+            <li> # 총점 : ${s.total} 점</li>
+            <li> # 평균 : ${s.average} 점</li>
+            <li> # 학점 :🔫 ${s.grade} 🔫</li>
         </ul>
         <button id="go-list">목록</button>
         <button id="go-modify">수정</button>
@@ -80,7 +80,7 @@
 
     const $modifyBtn = document.getElementById('go-modify');
     $modifyBtn.onclick = e => {
-        window.location.href = '/score/modify?stuNum=${detailNum.stuNum}';
+        window.location.href = '/score/modify?stuNum=${s.stuNum}';
     };
 
 

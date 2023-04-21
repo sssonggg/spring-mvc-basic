@@ -1,14 +1,11 @@
 package com.spring.mvc.chap04.repository;
 
-import com.spring.mvc.chap04.entity.Grade;
 import com.spring.mvc.chap04.entity.Score;
-import com.spring.mvc.chap04.entity.ScoreRequestDTO;
-import org.springframework.stereotype.Component;
+import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
 
-import static com.spring.mvc.chap04.entity.Grade.*;
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
 
