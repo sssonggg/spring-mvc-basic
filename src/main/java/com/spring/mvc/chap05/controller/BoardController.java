@@ -54,17 +54,14 @@ public class BoardController {
         return "redirect:/board/list";
     }
 
+    // 글 상세 조회 요청
 
-
-
-
-    /*@GetMapping("/findOne")
-    public String findOne(int boardNo, Model model) {
+    @GetMapping("/detail")
+    public String findOne(int bno, Model model) {
         System.out.println("/score/list : GET!");
 
-        Board board = boardRepository.findOne(boardNo);
-        model.addAttribute("b", board);
+//        model.addAttribute("b", boardService.getdetail(bno));
         return "chap05/findOne";
-    }*/
+    }
 
 }

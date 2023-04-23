@@ -1,5 +1,6 @@
 package com.spring.mvc.chap05.service;
 
+//import com.spring.mvc.chap05.dto.BoardDetailResponseDTO;
 import com.spring.mvc.chap05.dto.BoardListResponseDTO;
 import com.spring.mvc.chap05.dto.BoardWriteRequestDTO;
 import com.spring.mvc.chap05.entity.Board;
@@ -8,7 +9,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
 
@@ -40,5 +40,12 @@ public class BoardService {
     }
 
 
+    /*public BoardDetailResponseDTO getdetail(int bno) {
+        Board board = boardRepository.findOne(bno);
 
+        // 조회수 상승처리
+        board.setViewCount(board.getViewCount() + 1);
+        return new BoardDetailResponseDTO(board);
+
+    }*/
 }
