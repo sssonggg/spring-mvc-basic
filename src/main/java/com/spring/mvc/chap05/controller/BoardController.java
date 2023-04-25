@@ -60,7 +60,7 @@ public class BoardController {
     public String findOne(int bno, Model model) {
         System.out.println("/score/list : GET!");
 
-//        model.addAttribute("b", boardService.getdetail(bno));
+        model.addAttribute("b", boardService.getdetail(bno));
         return "chap05/findOne";
     }
 
