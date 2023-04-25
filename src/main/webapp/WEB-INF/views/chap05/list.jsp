@@ -81,25 +81,25 @@
         const confirmDelete = document.getElementById('confirmDelete'); // 모달 삭제 확인버튼
         const cancelDelete = document.getElementById('cancelDelete'); // 모달 삭제 취소 버튼
 
-        $cardContainer.addEventListener('click', e => {
-            // 삭제 버튼을 눌렀다면~
-            if (e.target.matches('.card-btn-group *')) {
-                console.log('삭제버튼 클릭');
-                modal.style.display = 'flex'; // 모달 창 띄움
-                const $delBtn = e.target.closest('.del-btn');
-                const deleteLocation = $delBtn.dataset.href;
-                // 확인 버튼 이벤트
-                confirmDelete.onclick = e => {
-                    // 삭제 처리 로직
-                    window.location.href = deleteLocation;
-                    modal.style.display = 'none'; // 모달 창 닫기
-                };
-                // 취소 버튼 이벤트
-                cancelDelete.onclick = e => {
-                    modal.style.display = 'none'; // 모달 창 닫기
-                };
-            }
-        });
+        // $cardContainer.addEventListener('click', e => {
+        //     // 삭제 버튼을 눌렀다면~
+        //     if (e.target.matches('.card-btn-group *')) {
+        //         console.log('삭제버튼 클릭');
+        //         modal.style.display = 'flex'; // 모달 창 띄움
+        //         const $delBtn = e.target.closest('.del-btn');
+        //         const deleteLocation = $delBtn.dataset.href;
+        //         // 확인 버튼 이벤트
+        //         confirmDelete.onclick = e => {
+        //             // 삭제 처리 로직
+        //             window.location.href = deleteLocation;
+        //             modal.style.display = 'none'; // 모달 창 닫기
+        //         };
+        //         // 취소 버튼 이벤트
+        //         cancelDelete.onclick = e => {
+        //             modal.style.display = 'none'; // 모달 창 닫기
+        //         };
+        //     }
+        // });
 
         // 전역 이벤트로 모달창 닫기
         window.addEventListener('click', e => {

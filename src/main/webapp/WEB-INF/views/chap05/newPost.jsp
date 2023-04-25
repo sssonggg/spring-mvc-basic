@@ -10,7 +10,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Single+Day&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Adamina&display=swap" rel="stylesheet">
 
 <!-- reset -->
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
@@ -25,10 +25,10 @@
 
  .form-container {
             width: 500px;
-            height: fit-content;
+            height: 800px;
             margin: auto;
             padding: 20px;
-            background: url("https://pbs.twimg.com/media/EbSKBtIUMAA47Eq?format=jpg&name=small"), no-repeat ;
+            background: url("https://pbs.twimg.com/media/EbSKBtIUMAA47Eq?format=jpg&name=small") no-repeat 100% 100% / 100% 100%;
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
             font-size: 18px;
@@ -56,12 +56,12 @@
             box-sizing: border-box;
             border: 2px solid #ffffff;
             border-radius: 8px;
-            margin-bottom: 10px;
+            margin: 20px 0;
             background-color: rgba(255, 255, 255, 0.8);
         }
         textarea {
             resize: none;
-            height: 200px;
+            height: 400px;
         }
         .buttons {
             display: flex;
