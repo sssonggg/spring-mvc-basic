@@ -5,6 +5,8 @@ import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 import com.spring.mvc.chap04.entity.Score;
 import com.spring.mvc.chap04.repository.ScoreRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -13,11 +15,15 @@ import java.util.stream.Collectors;
 // 컨트롤러와 레파지토리 사이에서 비즈니스 로직을 처리
 // ex) 트랜젝션 처리, 예외처리 , dto 변환처리
 
-@RequiredArgsConstructor
+//@RequiredArgsConstructor
 @Service  // service 빈 등록
 public class ScoreService {
     private final ScoreRepository scoreRepository;
 
+    @Autowired
+    public ScoreService(@Qualifier("jdbc") ScoreRepository scoreRepository) {
+        this.scoreRepository = scoreRepository;
+    }
 
     // 목록조회 중간처리
 

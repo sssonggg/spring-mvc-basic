@@ -44,7 +44,7 @@
         label {
             display: block;
             margin-bottom: 10px;
-            font-family: "Adamina";
+            font-family: 'Adamina';
             font-weight: bold;
             font-size: 25px;
         }
@@ -69,7 +69,7 @@
             margin-top: 20px;
         }
         button {
-            font-family: "Adamina";
+            font-family: 'Adamina';
             font-size: 20px;
             padding: 10px 20px;
             border: 3px solid #ffffff;

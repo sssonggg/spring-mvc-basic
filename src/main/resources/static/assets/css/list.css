@@ -63,15 +63,15 @@
 }
 
 .card-container .card-wrapper:nth-child(3n) .card-title-wrapper {
-    background: aquamarine;
+    background: rgb(235, 255, 180);
 }
 
 .card-container .card-wrapper:nth-child(3n - 1) .card-title-wrapper {
-    background: violet;
+    background: rgb(238, 130, 189);
 }
 
 .card-container .card-wrapper:nth-child(3n - 2) .card-title-wrapper {
-    background: dodgerblue;
+    background: rgb(152, 202, 253);
 }
 
 .card-container .card-wrapper .card-title-wrapper .card-title {
@@ -160,7 +160,7 @@
     width: 40px;
     height: 40px;
     border-radius: 50%;
-    background: #f00;
+    background: rgb(255, 0, 140);
     opacity: 0;
     color: #fff;
     font-weight: 700;

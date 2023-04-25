@@ -36,7 +36,7 @@ import java.util.stream.Collectors;
 public class ScoreController {
 
     // 저장소에 의존해야 데이터를 받아서 클라이언트에게 응답할 수 있음
-    private final ScoreRepository repository;
+//    private final ScoreRepository repository;
     private final ScoreService scoreService;
 
     // 만약에 클래스의 생성자가 단 한개라면
@@ -51,7 +51,8 @@ public class ScoreController {
      * 1. 성적등록화면 띄우기 + 정보목록조회
      */
     @GetMapping("/list")
-    public String list(Model model, @RequestParam(defaultValue = "num") String sort) {
+    public String list(Model model,
+                       @RequestParam(defaultValue = "num") String sort) {
         System.out.println("/score/list : GET!");
         System.out.println("정렬 요구사항 : " + sort);
 
@@ -64,7 +65,13 @@ public class ScoreController {
                 .map(s -> new ScoreListResponseDTO(s))
                 .collect(Collectors.toList());*/
 
-        model.addAttribute("sList", scoreService);
+        //        List<ScoreListResponseDTO> responseDTOList = new ArrayList<>();
+//        for (Score s : scoreList) {
+//            ScoreListResponseDTO dto = new ScoreListResponseDTO(s);
+//            responseDTOList.add(dto);
+//        }
+
+        model.addAttribute("sList", responseDTOList);
         return "chap04/score-list";
     }
 
@@ -109,15 +116,12 @@ public class ScoreController {
     @GetMapping("/detail")
     public String detail(@RequestParam(required = false) int stuNum, Model model) {
         System.out.println("/score/detail : GET!");
-
-        Score detail = repository.findByStuNum(stuNum);
-        model.addAttribute("detailNum", detail);
-
+        retrieve(stuNum, model);
         return "chap04/score-detail";
     }
 
     /**
-     * 5. 성적 정보 수정 폼
+     * 5. 성적 정보 수정 폼(수정화면 열기)
      */
     @GetMapping("/modify")
     public String modify(int stuNum, Model model) {
@@ -136,7 +140,7 @@ public class ScoreController {
         Score score = scoreService.retrieve(stuNum);
         score.changeScore(dto);
 
-        return "redirect:/score/detail?stuNum=" + stuNum;
+        return "redirect:/score/detail?stuNum=" + stuNum; // 상세보기 페이지로 리다이렉트
     }
 
     private void retrieve(int stuNum, Model model) {

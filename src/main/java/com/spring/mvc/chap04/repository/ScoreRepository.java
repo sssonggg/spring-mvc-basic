@@ -14,7 +14,8 @@ public interface ScoreRepository {
     // 성적 정보 전체 목록 조회
     List<Score> findAll(); // 일반 목록조회
 
-    default List<Score> findAll(String sort){
+
+    default List<Score> findAll(String sort) {
         return null;
     }  // 정렬 목록조회 - default 처음 설계와 달리 강제 오버라이딩 할 경우
 
@@ -27,6 +28,5 @@ public interface ScoreRepository {
     // 성적 정보 개별 조회
     Score findByStuNum(int stuNum);
 
-    // 성적 정보 수정
-    public boolean modifyByScore(int stuNum, ScoreRequestDTO dto);
+
 }

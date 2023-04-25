@@ -5,6 +5,7 @@ import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 import org.springframework.stereotype.Repository;
 
 import java.util.*;
+import java.util.function.Function;
 
 import static java.util.Comparator.comparing;
 import static java.util.stream.Collectors.toList;
@@ -35,17 +36,23 @@ public class ScoreRepositoryImpl implements ScoreRepository {
 
     @Override
     public List<Score> findAll() {
-        return new ArrayList<>(scoreMap.values())
+        return scoreMap.values()
                 .stream()
                 .sorted(comparing(Score::getStuNum))
                 .collect(toList());
     }
     @Override
     public List<Score> findAll(String sort) {
-        Comparator<Score> comparing = comparing(Score::getStuNum);
+        Comparator<Score> comparing;
+        comparing = comparing(Score::getStuNum);
         switch (sort) {
             case "num" :
-                comparing = comparing(Score::getStuNum);
+                comparing = comparing(new Function<Score, Integer>() {
+                    @Override
+                    public Integer apply(Score score) {
+                        return score.getStuNum();
+                    }
+                });
             break;
             case "name" :
                 comparing = comparing(Score::getName);
@@ -56,7 +63,7 @@ public class ScoreRepositoryImpl implements ScoreRepository {
          }
         return scoreMap.values()
                 .stream()
-                .sorted(comparing.reversed())
+                .sorted(comparing)
                 .collect(toList());
 
     }
@@ -67,7 +74,7 @@ public class ScoreRepositoryImpl implements ScoreRepository {
         }
         score.setStuNum(++sequence);
         scoreMap.put(score.getStuNum(), score);
-        System.out.println(findAll());
+//        System.out.println(findAll());
         return true;
     }
 
@@ -83,12 +90,5 @@ public class ScoreRepositoryImpl implements ScoreRepository {
         return scoreMap.get(stuNum);
     }
 
-    @Override
-    public boolean modifyByScore(int stuNum, ScoreRequestDTO dto) {
-        // Score 객체 꺼내기
-        Score score = scoreMap.get(stuNum);
-        // 점수 재설정
-        score.changeScore(dto);
-        return true;
-    }
+
 }
