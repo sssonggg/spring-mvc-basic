@@ -14,6 +14,7 @@ import static java.lang.Math.round;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Score {
     private String name;  // 학생 이름
     private int kor, eng, math;  // 국, 영, 수 점수

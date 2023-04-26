@@ -6,6 +6,7 @@ import lombok.*;
 @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class ScoreRequestDTO {
     private String name;  // 학생 이름
     private int kor, eng, math;  // 국, 영, 수 점수 private String name;

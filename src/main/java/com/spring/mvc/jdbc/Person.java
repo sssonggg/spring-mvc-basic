@@ -13,6 +13,7 @@ import java.sql.SQLException;
 @ToString @EqualsAndHashCode
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class Person {
     private long id;  // int(10)은 10자리수-> 99억까지 가능: long타입
     private String personName;

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<!-- namespace에는 인터페이스 풀 네임을 작성(패키지+인터페이스 이름)-->
+<mapper namespace="com.spring.mvc.mybatis.ScoreMapper">
+
+    <insert id="save">
+        INSERT INTO tbl_score
+        (stu_name, kor, eng, math, total, average, grade)
+        VALUES (#{name}, #{kor}, #{eng}, #{math}, #{total}, #{average}, #{grade})
+    </insert>
+
+
+
+</mapper>
+
