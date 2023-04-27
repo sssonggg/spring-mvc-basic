@@ -48,19 +48,19 @@ public class BoardController {
     }
 
     // 글 삭제 요청 처리
+    @GetMapping("/delete")
     public String delete(int bno) {
-        System.out.println("/board/write : GET");
+        System.out.println("/board/delete : GET");
         boardService.delete(bno);
         return "redirect:/board/list";
     }
 
     // 글 상세 조회 요청
-
     @GetMapping("/detail")
-    public String findOne(int bno, Model model) {
+    public String detail(int bno, Model model) {
         System.out.println("/score/list : GET!");
 
-        model.addAttribute("b", boardService.getdetail(bno));
+        model.addAttribute("b", boardService.getDetail(bno));
         return "chap05/findOne";
     }
 

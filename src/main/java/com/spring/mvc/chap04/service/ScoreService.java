@@ -4,6 +4,7 @@ import com.spring.mvc.chap04.DTO.ScoreListResponseDTO;
 import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 import com.spring.mvc.chap04.entity.Score;
 import com.spring.mvc.chap04.repository.ScoreRepository;
+import com.spring.mvc.mybatis.ScoreMapper;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -18,10 +19,11 @@ import java.util.stream.Collectors;
 //@RequiredArgsConstructor
 @Service  // service 빈 등록
 public class ScoreService {
-    private final ScoreRepository scoreRepository;
+//    private final ScoreRepository scoreRepository;
+    private final ScoreMapper scoreRepository;
 
     @Autowired
-    public ScoreService(@Qualifier("jdbc") ScoreRepository scoreRepository) {
+    public ScoreService(ScoreMapper scoreRepository) {
         this.scoreRepository = scoreRepository;
     }
 

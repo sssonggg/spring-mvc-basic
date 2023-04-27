@@ -20,15 +20,18 @@
 
 <link rel="stylesheet" href="/assets/css/main.css">
 
+ <!-- ck editor -->
+    <script src="https://cdn.ckeditor.com/4.17.2/standard/ckeditor.js"></script>
 <style>
 
 
  .form-container {
             width: 500px;
-            height: 800px;
+            height: 700px;
             margin: auto;
             padding: 20px;
-            background: url("https://pbs.twimg.com/media/EbSKBtIUMAA47Eq?format=jpg&name=small") no-repeat 100% 100% / 100% 100%;
+            /* background: url("https://pbs.twimg.com/media/EbSKBtIUMAA47Eq?format=jpg&name=small") no-repeat 100% 100% / 100% 100%; */
+            background: linear-gradient(45deg, Violet, Orange, rgb(215, 255, 163));
             box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
             border-radius: 4px;
             font-size: 18px;
@@ -97,8 +100,8 @@
     
   <div id="wrap" class="form-container">
     <section class="title">
-        <form action="/board/write" method="post"></form>
         <h1>✍🏻 MBTI 게시판 글쓰기</h1>
+        <form action="/board/write" method="post">
         <div>
             <label for="title">제목 </label>
             <input type="text" id="title" name="title" required>
@@ -117,6 +120,9 @@
     </section>
         </from>
     </div>
+        <script>
+            CKEDITOR.replace('content');
+        </script>
     </body>
   </div>
 

@@ -16,7 +16,7 @@ import static java.lang.Math.round;
 @AllArgsConstructor
 @Builder
 public class Score {
-    private String name;  // 학생 이름
+    private String stuName;  // 학생 이름
     private int kor, eng, math;  // 국, 영, 수 점수
     private int stuNum; // 학번
     private int total; // 총점
@@ -24,7 +24,7 @@ public class Score {
     private Grade grade; // 학점
 
     public Score(ScoreRequestDTO dto) {
-        this.name = dto.getName();
+        this.stuName = dto.getName();
         this.kor = dto.getKor();
         this.eng = dto.getEng();
         this.math = dto.getMath();
@@ -35,7 +35,7 @@ public class Score {
 
     public Score(ResultSet rs) throws SQLException {
         this.stuNum = rs.getInt("stu_num");
-        this.name = rs.getString("stu_name");
+        this.stuName = rs.getString("stu_name");
         this.kor = rs.getInt("kor");
         this.eng = rs.getInt("eng");
         this.math = rs.getInt("math");

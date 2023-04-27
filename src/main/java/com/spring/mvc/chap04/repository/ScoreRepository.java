@@ -2,6 +2,7 @@ package com.spring.mvc.chap04.repository;
 
 import com.spring.mvc.chap04.entity.Score;
 import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
+import org.apache.ibatis.annotations.Mapper;
 
 import java.util.List;
 
@@ -9,6 +10,7 @@ import java.util.List;
 // 성적정보를 잘 저장, 조회, 삭제, 수정해야 함.
 // Q. 그래서 어디에 저장/ 어디에서 조회&삭제&수정 하나요?
 //
+
 public interface ScoreRepository {
 
     // 성적 정보 전체 목록 조회

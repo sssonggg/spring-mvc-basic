@@ -59,7 +59,7 @@
 
 <body>
     <div>
-        <h1><span>🥇${s.name} </span>님의 성적정보</h1>
+        <h1><span>🥇${s.stuName} </span>님의 성적정보</h1>
         <ul class="student-inform">
             <li> # 국어 : ${s.kor} 점</li>
             <li> # 영어 : ${s.eng} 점</li>

@@ -55,7 +55,7 @@ public class ScoreRepositoryImpl implements ScoreRepository {
                 });
             break;
             case "name" :
-                comparing = comparing(Score::getName);
+                comparing = comparing(Score::getStuName);
                 break;
             case "avg" :
                 comparing = comparing(Score::getAverage);

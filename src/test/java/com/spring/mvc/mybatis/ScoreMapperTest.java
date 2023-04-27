@@ -2,6 +2,7 @@ package com.spring.mvc.mybatis;
 
 import com.spring.mvc.chap04.DTO.ScoreRequestDTO;
 import com.spring.mvc.chap04.entity.Score;
+import com.spring.mvc.jdbc.Person;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -45,4 +46,16 @@ class ScoreMapperTest {
     @Test
     void findByStuNum() {
     }
+
+//    @Test
+//    void changeTest() {
+//        // given
+//       long stuNum = 15L;
+//
+//        // when
+//        boolean flag = mapper.change(stuNum);
+//
+//        //then
+//        assertTrue(flag);
+//    }
 }
