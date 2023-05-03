@@ -98,7 +98,7 @@
               <div id="content" name="content">${b.content}</div>
           </div>
           <div class="buttons">
-              <button class="list-btn" type="button" onclick="window.location.href='/board/list?pageNo={s.pageNo}&type=${s.type}&keyword=${s.keyword}'">목록으로</button>
+              <button class="list-btn" type="button" onclick="window.location.href='/board/list?pageNo=${s.pageNo}&type=${s.type}&keyword=${s.keyword}'">목록으로</button>
           </div>
       </section>
 

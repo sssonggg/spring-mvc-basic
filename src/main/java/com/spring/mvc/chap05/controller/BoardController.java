@@ -38,6 +38,7 @@ public class BoardController {
 
         model.addAttribute("bList", responseDTOS);
         model.addAttribute("maker", maker);
+        model.addAttribute("s", page);
         return "chap05/list";
     }
 
@@ -72,5 +73,7 @@ public class BoardController {
 //        model.addAttribute("s", search);    //@ModelAttribute~
         return "chap05/findOne";
     }
+
+
 
 }
