@@ -1,11 +1,13 @@
 package com.spring.mvc.chap05.controller;
 
+import com.spring.mvc.chap05.dto.BoardDetailResponseDTO;
 import com.spring.mvc.chap05.dto.BoardListResponseDTO;
 import com.spring.mvc.chap05.dto.BoardWriteRequestDTO;
 import com.spring.mvc.chap05.dto.page.Page;
 import com.spring.mvc.chap05.dto.page.PageMaker;
 import com.spring.mvc.chap05.dto.page.Search;
 import com.spring.mvc.chap05.service.BoardService;
+import com.spring.mvc.util.LoginUtil;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Controller;
@@ -15,6 +17,10 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
+import java.io.IOException;
 import java.util.List;
 
 @Controller
@@ -27,7 +33,32 @@ public class BoardController {
 
     // 목록 조회 요청
     @GetMapping("/list")
-    public String list(Search page, Model model) {
+    public String list(
+            Search page,
+            Model model,
+            HttpServletRequest request)
+            throws IOException {
+
+        /*
+        boolean flag = false;
+
+        // 세션을 확인
+        Object login = request.getSession().getAttribute("login");
+
+        if(login != null) flag = true;
+
+
+//        // 쿠키 확인
+//        Cookie[] cookies = request.getCookies();
+//        for (Cookie c: cookies) {
+//            if(c.getName().equals("login")) {
+//                flag = true;
+//                break;
+//            }
+//        }
+
+        if(!flag) return "redirect:/members/sign-in";
+        */
         log.info("/board/list : GET");
         log.info("page : {}", page);
         List<BoardListResponseDTO> responseDTOS
@@ -44,16 +75,21 @@ public class BoardController {
 
     // 글쓰기 화면 조회 요청
     @GetMapping("/write")
-    public String write() {
+    public String write(HttpSession session) {
+
+//        if(!LoginUtil.isLogin(session)) {
+//            return "redirect:/members/sign-in";
+//        }
+
         System.out.println("/board/write : GET");
         return "chap05/newPost";
     }
 
     // 글 등록 요청 처리
     @PostMapping("/write")
-    public String write(BoardWriteRequestDTO dto) {
+    public String write(BoardWriteRequestDTO dto, HttpSession session) {
         System.out.println("/board/write : POST");
-        boardService.register(dto);
+        boardService.register(dto, session);
         return "redirect:/board/list";
     }
 
@@ -69,7 +105,8 @@ public class BoardController {
     @GetMapping("/detail")
     public String detail(int bno, @ModelAttribute("s") Search search, Model model) {
         System.out.println("/score/list : GET!");
-        model.addAttribute("b", boardService.getDetail(bno));
+        BoardDetailResponseDTO detail = boardService.getDetail(bno);
+        model.addAttribute("b", detail);
 //        model.addAttribute("s", search);    //@ModelAttribute~
         return "chap05/findOne";
     }
