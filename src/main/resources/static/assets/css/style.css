@@ -1,0 +1,39 @@
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #ffffff;
+}
+
+.weather-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #9ed0ff;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.icon-container {
+  font-size: 30px;
+}
+
+.CurrTemp {
+  font-size: 2em;
+  font-weight: bold;
+}
+
+.MinTemp, .MaxTemp {
+  font-size: 1.2em;
+  margin: 5px 0;
+}
+
+.Wind, .Humidity, .Clouds {
+  font-size: 1.2em;
+  margin: 5px 0;
+}

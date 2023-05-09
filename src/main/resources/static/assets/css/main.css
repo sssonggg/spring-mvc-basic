@@ -100,7 +100,7 @@ header .inner-header .menu-open .lnr-menu {
 header .gnb {
     background: #000;
     color: #666;
-    height: 200px;
+    height: 100vh;
     font-size: 40px;
     padding: 70px 100px;
     box-sizing: border-box;
