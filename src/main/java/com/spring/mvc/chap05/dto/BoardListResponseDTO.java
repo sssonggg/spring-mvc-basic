@@ -36,11 +36,13 @@ public class BoardListResponseDTO {
     }
 
     private String makeShortContent(String originContent) {
+
         return sliceString(originContent, 30);
     }
 
 
     private String makeShortTitle(String originTitle) {
+
         return sliceString(originTitle, 7);
     }
 
