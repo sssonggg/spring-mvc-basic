@@ -1,6 +1,7 @@
 <%@ page contentType="text/html; charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 
+
 <!-- header -->
 <header>
     <div class="inner-header">
@@ -9,6 +10,15 @@
                 <img src="/assets/img/siklogo.png" alt="로고이미지">
             </a>
         </h1>
+        <!-- 프로필 사진 -->
+        <div class="profile-box">
+            <c:if test="${login == null || login.profile == null}">
+                 <img src="/assets/img/profile-img.jpg" alt="프로필사진">
+            </c:if>
+            <c:if test="${login != null}">
+                 <img src="/local${login.profile}" alt="프로필사진">
+            </c:if>
+        </div>
         <h2 class="intro-text">🖐🏻Welcome to Happy World ${login == null ? '' : login.account}🖐🏻</h2>
         <a href="#" class="menu-open">
             <span class="menu-txt">MENU</span>

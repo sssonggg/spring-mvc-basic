@@ -12,6 +12,9 @@
             margin-top: 200px;
             margin-bottom: 200px;
         }
+        .card{
+            padding: 16px;
+        }
 
     </style>
 </head>
