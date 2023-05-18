@@ -27,6 +27,7 @@ public class Member {
     private LocalDateTime regDate;
     private LocalDateTime limitTime;
     private String profileImage;  // 이미지 경로
+//    private LoginMethod;
 
 
 }

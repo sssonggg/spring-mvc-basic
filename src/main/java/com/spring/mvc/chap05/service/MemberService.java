@@ -38,6 +38,7 @@ public class MemberService {
                 .name(dto.getName())
                 .password(encoder.encode(dto.getPassword()))
                 .profileImage(savePath)
+//                .loginMethod(LoginMethod.COMMON)
                 .build();
 
         // 매퍼에게 회원정보 전달해서 저장명령
