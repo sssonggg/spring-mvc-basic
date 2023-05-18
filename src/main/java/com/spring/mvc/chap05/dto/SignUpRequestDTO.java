@@ -10,6 +10,7 @@ import javax.validation.constraints.Size;
 @Setter @Getter @ToString
 @NoArgsConstructor
 @AllArgsConstructor
+@Builder
 public class SignUpRequestDTO {
     @NotBlank
     private String account;   // 뷰 방식에서는 input의 name이 필드
